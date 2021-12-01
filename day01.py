@@ -1,7 +1,7 @@
 import sys
 
 def count_depth_increases(depths, window):
-    return sum(sum(depths[i-1:i+window-1]) < sum(depths[i:i+window]) for i in range(1, len(depths)-window+1))
+    return sum(depths[i] < depths[i+window] for i in range(len(depths)-window))
 
 assert len(sys.argv) == 2
 depths = list(map(int, open(sys.argv[1]).read().split()))
