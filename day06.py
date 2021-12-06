@@ -5,7 +5,7 @@ def count_lanternfish(lanternfish, days):
     for cycle in lanternfish:
         cycle_counts[cycle] += 1
     for _ in range(days):
-        new_cycle_counts = [cycle_counts[cycle] for cycle in range(1, 9)] + [cycle_counts[0]]
+        new_cycle_counts = cycle_counts[1:] + cycle_counts[:1]
         new_cycle_counts[6] += cycle_counts[0]
         cycle_counts = new_cycle_counts
     return sum(cycle_counts)
