@@ -1,15 +1,15 @@
 import sys
 
-def get_digits_by_length(digits, length):
-    return [''.join(sorted(digit)) for digit in digits if len(digit) == length]
+def get_digits_by_number_of_segments(digits, segments):
+    return [''.join(sorted(digit)) for digit in digits if len(digit) == segments]
 
 def get_digit_mapping(digits):
-    segments2 = get_digits_by_length(digits, 2)
-    segments3 = get_digits_by_length(digits, 3)
-    segments4 = get_digits_by_length(digits, 4)
-    segments5 = get_digits_by_length(digits, 5)
-    segments6 = get_digits_by_length(digits, 6)
-    segments7 = get_digits_by_length(digits, 7)
+    segments2 = get_digits_by_number_of_segments(digits, 2)
+    segments3 = get_digits_by_number_of_segments(digits, 3)
+    segments4 = get_digits_by_number_of_segments(digits, 4)
+    segments5 = get_digits_by_number_of_segments(digits, 5)
+    segments6 = get_digits_by_number_of_segments(digits, 6)
+    segments7 = get_digits_by_number_of_segments(digits, 7)
 
     mapping = {
         segments2[0]: '1',
